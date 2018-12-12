@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+      
+    </head>
+    <body>
+        <h1>Bolinha Animada</h1>
+        <canvas id="meu_canvas" width="300" height="300"></canvas>
+        <script>
+            // Canvas e contexto
+            canvas = document.getElementById('meu_canvas');
+            context = canvas.getContext('2d');
+
+            // Dados da bola
+            var x = 20;
+            var y = 100;
+            var raio = 5;
+
+            // Momento Inicial
+            var anterior = new Date().getTime();
+
+            // Iniciar Animacao
+            requestAnimationFrame(mexerBola);
+
+            // Funcao de Animacao
+            function mexerBola() { // Aqui uma bolinha se deslocará
+                // Momento atual
+                var agora = new Date().getTime();
+                // Diferenca
+                var decorrido = agora - anterior;
+
+                // Limpar o Canvas
+                context.clearRect(0, 0, canvas.width, canvas.height);
+
+                // Desenhar a bola
+                context.beginPath();
+                context.arc(x, y, raio, 0, Math.PI*2);
+                context.fill();
+
+                // Deslocar 20 pixels para a direita
+                //x += 80;
+                var velocidade = 30;
+                x += velocidade * decorrido / 1000;
+
+                // Guardamos o instante para o proximo ciclo
+                anterior = agora;
+                // Chamar o proximo ciclo de Animacao
+                requestAnimationFrame(mexerBola);
+            }
+        </script>
+    
+    </body>
+</html>

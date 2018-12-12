@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Teste</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Imagens</h1>
+
+        <canvas id="meu_canvas" width="500" height="100"></canvas>
+        <script>
+            // Canvas e contexto
+            var canvas = document.getElementById('meu_canvas');
+            var context = canvas.getContext('2d');
+
+            // Carregar a imagem
+            var imagem = new Image();
+            imagem.src = 'img/ovni.png';
+            imagem.onload = function() {
+                // Comecar na posicao 20
+                var x = 20;
+
+                // Desenhar as imagens
+                for (var i = 1; i < 5; i++) {
+                    context.drawImage(imagem, x, 20, 64, 32);
+                    x += 70;
+                }
+
+                // Reduzindo para metade do tamanho
+                context.drawImage(imagem, x, 20, 32, 16);
+
+                // Ampliando para o dobro do tamanho
+                context.drawImage(imagem, x, 20, 120, 64);
+            }
+        </script>
+    
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Imagens</h1>
+
+        <canvas id="meu_canvas" width="300" height="300"></canvas>
+        <script>
+            // Canvas e contexto
+            var canvas = document.getElementById('meu_canvas');
+            var context = canvas.getContext('2d');
+
+            // Carregar a imagem
+            var imagem = new Image();
+            imagem.src = 'img/explosao.png';
+            imagem.onload = function() {
+                context.drawImage(
+                    imagem,
+                    80, 10, 60, 65, // Area de recorte
+                    20, 20, 60, 65, // Desenho no canvas
+                );
+            }
+
+        </script>
+    
+    </body>
+</html>
