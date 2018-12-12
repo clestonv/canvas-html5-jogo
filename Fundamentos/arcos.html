@@ -1,0 +1,37 @@
+<h1>Arcos</h1>
+<canvas id="meu_canvas" width="300" height="300"></canvas>
+<script>
+    // Canvas e Contexto
+    var canvas = document.getElementById('meu_canvas');
+    var context = canvas.getContext('2d');
+
+    //Cores e Espessura da linha
+    context.fillStyle = 'gray';
+    context.strokeStyle = 'black';
+    context.lineWidth = 2;
+
+    // Primeiro arco:
+    context.beginPath();  // Novo path
+
+    // Desenha
+    context.arc(50, 50, 40, 90* Math.PI/180, 270*Math.PI/180, false);
+    // Preenchimento
+    context.fill();
+    // Contorno
+    context.stroke();
+
+    // Segundo arco
+    context.beginPath();
+    context.arc(150, 50, 40, 90*Math.PI/180, 270*Math.PI/180, true);
+
+    context.fill();
+    context.stroke();
+
+    // Circunferencia completa
+    context.beginPath();
+    context.arc(250, 50, 40, 0, 2*Math.PI);
+    context.fill();
+    context.stroke();
+
+
+</script>

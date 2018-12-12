@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+    
+        <canvas id="meu_canvas" width="200" height="200"></canvas>
+        <script>
+            //Canvas e Contexto
+            var canvas = document.getElementById('meu_canvas');
+            var context = canvas.getContext('2d');
+
+            // Preenchimento vermelho
+            context.fillStyle = 'red';
+            context.fillRect(50,50,100,100);
+            // Contorno Azul, com espessura de 3px
+            context.lineWidth = 3;              // Espessura da linha
+            context.strokeStyle = 'blue';       // Cor da linha
+            context.strokeRect(50,50,100,100);  // Tamanho do contorno
+        </script>
+    </body>
+</html>

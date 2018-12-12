@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Processando o Canvas após a tag</title>
+    </head>
+    <body>
+        <canvas id="meu_canvas" width="200" height="200"></canvas>
+
+        <script>
+
+            //Referenciando o Canvas
+            var canvas = document.getElementById('meu_canvas'); // Obtendo o contexto gráfico
+            var context = canvas.getContext('2d');
+
+            //Desenhar um retangulo
+            context.strokeRect(50,50, 100, 100);
+        </script>
+    </body>
+</html>
