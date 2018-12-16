@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Movimento personagens com KeyDown</title>
+    </head>
+
+    <body>
+        <h1>Leitura do Teclado</h1>
+        <canvas id="canvas_teclado" width="500" height="500"></canvas>
+        <script>
+            // Referencia do canvas
+            var canvas = document.getElementById('canvas_teclado');
+            var context = canvas.getContext('2d');
+
+            // Posicao inicial do personagem
+            var posicao = 0;
+            desenharFundo();
+            desenharPersonagem();
+
+            document.addEventListener('keydown', function(evento){
+                if (evento.keyCode == 37) { // Seta para esquerda
+                    posicao -= 10;
+                    desenharPersonagem();
+                }
+                else if(evento.keyCode == 39) { // Seta para a direita
+                    posicao += 10;
+                    desenharPersonagem();
+                }
+            });
+
+            // Um personagem nao muito simpatico mas...
+            function desenharPersonagem() {
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                context.fillRect(posicao, 100, 20, 50);
+            }
+
+            function desenharFundo() {
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                context.fillRect(100, 100, 500, 500);
+            }
+            
+
+
+        </script>
+    </body>
+
+</html>

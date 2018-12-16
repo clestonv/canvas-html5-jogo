@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
+    
     <head>
         <title>Bola</title>
         <script src="animacao.js"></script>
         <script src="bola.js"></script>
+        <style>
+            body {
+                background-color: yellow;
+            }
+        </style>
     </head>
     <body>
         <h1>Bola</h1>
@@ -13,6 +19,9 @@
             //Referencia para o Canvas
             var canvas = document.getElementById('canvas_animacao');
             var context = canvas.getContext('2d');
+            
+            context.fillStyle = 'yellow';
+            context.fillRect(50, 50, 500, 500);
 
             // Criando alguns sprites
             var b1 = new Bola(context);
@@ -31,10 +40,19 @@
             b2.cor = 'blue';
             b2.raio = 30;
 
+            var b3 = new Bola(context)
+            b3.x = 100;
+            b3.y = 200;
+            b3.velocidadeX = 20;
+            b3.velocidadeY = 20;
+            b3.cor = 'gray';
+            b3.raio = 25;
+
             // Criando o loop de animacao
             var animacao = new Animacao(context);
             animacao.novoSprite(b1);
             animacao.novoSprite(b2);
+            animacao.novoSprite(b3);
 
             // Ligar a animacao
             animacao.ligar();
